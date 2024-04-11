@@ -1,0 +1,139 @@
+Q: I found a bug or missing feature, how can I tell you about it?
+A: Use the red button on the left bottom of the app. Please write what you would like to have changed and in case you want to be contacted, let us know your name.
+
+Q: Will there be a mobile app for abilitate?
+A: Currently, abilitate is a web app, and we're actively working on optimizing the web version for mobile. While a dedicated mobile app is on our roadmap, the focus remains on enhancing the web version for mobile compatibility.
+
+Where is my patient’s activity?
+
+As we are ICF based, we limited activities to what is found in the catalogue. However we are constantly adding keywords to find certain activities. Please leave some feedback if you feel something is missing!
+
+ICF Status
+
+Where can I view all edits made in a patient's card?
+
+You can review all edits in the timeline section of the patient's card.
+
+Patient details
+
+Device optimization
+
+Is there a limit on how many patient profiles I can create?
+
+No, there are currently no limitations on the number of patient profiles users can create. You're free to create as many patient profiles as needed.
+
+Patients
+
+From which devices can I access the app?
+
+The app is primarily optimized for tablets and desktops and is accessible through all web browsers. Our team is also working on optimizing the app for mobile devices.
+
+Device optimization
+
+Can multiple users work on and update the same patient simultaneously in the app?
+
+Yes, multiple users can collaborate and update the same patient information simultaneously. Additionally, a change history is available in the timeline for transparency and accountability.
+
+Patient details
+
+Who is the app intended for?
+
+The app is designed for physiotherapists, occupational therapists, managers, heads of rehabilitation/physiotherapy/occupational therapy departments, and shareholders involved in rehabilitation decision-making.
+
+General
+
+I accidentally deleted patient data. Is it possible to reverse these changes?
+
+Unfortunately, once data is deleted, it cannot be automatically recovered. However, you can reach out to our support team for assistance and guidance on potential solutions or data recovery options.
+
+Patients
+
+How much technical skill do I need for the app?
+
+The app is designed to be user-friendly and straightforward. All you need is a device such as a tablet or laptop to register and use the app. No extensive technical skills are required.
+
+General
+
+In how many languages is the app available?
+
+Currently, the app is available in German and English languages. However, we are actively working on adding support for additional languages, which is part of our roadmap for future updates.
+
+General
+
+The employee (therapist) left the company. Is it possible to delete the profile?
+
+Yes, if a therapist has left the company, you can delete their profile directly within the app. This helps maintain an accurate and up-to-date user list.
+
+Profile
+
+How is the security of the abilitate app maintained?
+
+The app employs a robust security framework, featuring column level encryption for patient data, two-factor authentication, routine security audits, and secure hosting infrastructure in Europe, along with the ability to seamlessly integrate with the company's server.
+
+Security
+
+How can I delete my profile from the app?
+
+To delete your profile from the app, please email the administrator at abilitate@tech2people.at with your request, including your username or relevant account information.
+
+Profile
+
+Is there support available within the app?
+
+While we're currently working on embedding a live support chat option in the app, for any questions or assistance, please feel free to contact the abilitate team via email at abilitate@tech2people.at.
+
+@Stefan Dürr würdest du sagen, dass es in den Profilbereich gehört?
+
+Basic functionality-related questions
+
+How do I get to my patients?
+
+Open the side navigation menu by clicking on the menu button on the top left corner. Click on “Patients”.
+
+How do I create a patient?
+
+Get to the patient list. Click on the purple “Create patient” button on the top right. Enter the credentials and press “Create patient”.
+
+How do I enter the patient’s medical details (physique, diagnoses, previous measures, medications, etc.)?
+
+Get to the patient list. Click on a patient card. In the patient details page, choose the tab “Initial Assessment”.
+
+How do I add an activity to the patient?
+
+Get to the patient details page. Choose the tab “ICF Status”. Click the purple “Add activity” button on the top right.
+
+How do I add a sub-activity to the patient’s activity?
+
+Get to the tab “ICF Status” in the patient details page. There should be a previously added activity.  In the activity card, click on the green plus button to the right. Select a sub-activity.
+
+How do I add a body structure or body function to the patient’s activity?
+
+Get to the tab “ICF Status” on the patient details page. There should be a previously added activity.  In the activity card, click on the orange plus button to the right. Select a group and a function. Click on the bodychart to select a specific body structure.
+
+How do I assess a patient’s activity?
+
+Get to the tab “ICF Status” on the patient details page. There should be a previously added activity. Click on the trending up arrow button. Assess the patient via patient-reported or therapist-reported assessments.
+
+How do I see a patient’s progress over time?
+
+After you conducted multiple assessments on the same activity, head to the tab “Report” on the patient details page. There, you see the patient’s progression on assessed activities.
+
+Where do I plan my therapy?
+
+Get to the tab “Therapy planning” on the patient details page. Fill in therapy periodicity and therapy content.
+
+How can I delete a patient's profile?
+
+To delete a patient's profile, first, navigate to the Patients section within the app. From there, locate the specific patient whose profile you wish to remove. Once you've found the patient, click on their name to access their profile. Within the profile, you'll notice an edit icon positioned next to the patient's name. Click on this icon. On the upper right side of the screen, you'll see a button labeled "Delete Patient". Click on this button. After confirming your action, the patient's profile will be permanently deleted from the system. It's important to note that this action is irreversible, so proceed with caution.
+
+Where can I access onboarding information about the app's sections if I'm not a first-time user?
+
+To access onboarding information about the app's sections as an existing user, you can follow these steps: Click on the patient's profile to access their details, then locate the flag icon positioned on the right side of the screen and click on it. This action will enable you to navigate through all the patient card sections of the web app using the "Next" or "Previous" buttons. This feature allows you to revisit onboarding information and familiarize yourself with different sections of the app at your convenience.
+
+How and where can I upload files in the app?
+
+To upload files in the app, navigate to the "Patients" section, select the desired patient's profile, and then click on the "Files" section, “Upload file” button to upload your file along with a file name, description, and any necessary data, ensuring that your uploaded file and accompanying information are saved accordingly.
+
+How to create therapy documentation?
+
+Navigate to the "Patients" section, select the  patient's profile, then click on the "Documentation" section button labeled "Create". In the ensuing window, input the relevant information including date, time, duration, and therapy documentation.
