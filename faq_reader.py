@@ -9,58 +9,68 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from environment import Environment
 from langchain_openai import ChatOpenAI
 
-question = 'How do I plan my therapy?'
-local_env = Environment()
 
-### PIPELINE
+def answerFaqRelatedQuestion(question):
+    local_env = Environment()
 
-## INDEXING: LOAD
-loader = TextLoader("./FAQ.txt")
-docs = loader.load()
+    ### PIPELINE
 
-
-## INDEXING: SPLIT
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=300, chunk_overlap=20, add_start_index=True
-)
-all_splits = text_splitter.split_documents(docs)
-# print(len(all_splits))
-
-## INDEXING: STORE
-vectorstore = Chroma.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_version="gpt-3.5-turbo-0125", openai_api_key=local_env.OPENAI_API_KEY))
+    ## INDEXING: LOAD
+    loader = TextLoader("./FAQ.txt")
+    docs = loader.load()
 
 
-## RETRIEVAL
-retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 6})
+    ## INDEXING: SPLIT
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=300, chunk_overlap=20, add_start_index=True
+    )
+    all_splits = text_splitter.split_documents(docs)
+    # print(len(all_splits))
 
-retrieved_docs = retriever.invoke(question)
+    ## INDEXING: STORE
+    vectorstore = Chroma.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(openai_api_version="gpt-3.5-turbo-0125", openai_api_key=local_env.OPENAI_API_KEY))
 
-print(question)
-print('-----------------')
 
-for page_content in retrieved_docs:
-    print(page_content)
+    ## RETRIEVAL
+    retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 6})
 
-print('-----------------')
-## GENERATION
-llm = ChatOpenAI(model="gpt-3.5-turbo-0125", openai_api_key=local_env.OPENAI_API_KEY)
+    retrieved_docs = retriever.invoke(question)
 
-prompt = hub.pull("rlm/rag-prompt")
+    # print(question)
+    # print('-----------------')
 
-example_messages = prompt.invoke(
-    {"context": "filler context", "question": "filler question"}
-).to_messages()
-print(example_messages[0].content)
+    # for page_content in retrieved_docs:
+    #     print(page_content)
 
-def format_docs(docs):
-    return "\n\n".join(doc.page_content for doc in docs)
+    # print('-----------------')
 
-rag_chain = (
-    {"context": retriever | format_docs, "question": RunnablePassthrough()}
-    | prompt
-    | llm
-    | StrOutputParser()
-)
+    ## GENERATION
 
-for chunk in rag_chain.stream(question):
-    print(chunk, end="", flush=True)
+    llm = ChatOpenAI(model="gpt-3.5-turbo-0125", openai_api_key=local_env.OPENAI_API_KEY)
+
+    prompt = hub.pull("rlm/rag-prompt")
+
+    example_messages = prompt.invoke(
+        {"context": "filler context", "question": "filler question"}
+    ).to_messages()
+    # print(example_messages[0].content)
+
+    def format_docs(docs):
+        return "\n\n".join(doc.page_content for doc in docs)
+
+    rag_chain = (
+        {"context": retriever | format_docs, "question": RunnablePassthrough()}
+        | prompt
+        | llm
+        | StrOutputParser()
+    )
+
+    full_response = ""
+
+    for chunk in rag_chain.stream(question):
+        # print(chunk, end="", flush=True)
+        full_response += chunk
+
+    return {'question': question, 'answer': full_response}
+
+    # print(full_response)
