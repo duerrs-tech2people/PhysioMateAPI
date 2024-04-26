@@ -8,6 +8,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from environment import Environment
 from langchain_openai import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
 
 
 def answerFaqRelatedQuestion(question):
@@ -22,7 +23,7 @@ def answerFaqRelatedQuestion(question):
 
     ## INDEXING: SPLIT
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=300, chunk_overlap=20, add_start_index=True
+        chunk_size=400, chunk_overlap=30, add_start_index=True
     )
     all_splits = text_splitter.split_documents(docs)
     # print(len(all_splits))
@@ -46,6 +47,18 @@ def answerFaqRelatedQuestion(question):
 
     ## GENERATION
 
+    promptTemplate = """Use the following pieces of context to answer the question at the end.
+    These pieces come from a FAQ page, try to only include the answer of the question you find most likely to fit. Provide the full answer.
+    If you don't know the answer, just say that you don't know, don't try to make up an answer.
+
+    {context}
+
+    Question: {question}
+
+    Answer:"""
+
+    custom_faq_prompt = PromptTemplate.from_template(promptTemplate)
+
     llm = ChatOpenAI(model="gpt-3.5-turbo-0125", openai_api_key=local_env.OPENAI_API_KEY)
 
     prompt = hub.pull("rlm/rag-prompt")
@@ -60,7 +73,7 @@ def answerFaqRelatedQuestion(question):
 
     rag_chain = (
         {"context": retriever | format_docs, "question": RunnablePassthrough()}
-        | prompt
+        | custom_faq_prompt
         | llm
         | StrOutputParser()
     )
