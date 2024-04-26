@@ -44,22 +44,25 @@ Is there support available within the app?
 While we're currently working on embedding a live support chat option in the app, for any questions or assistance, please feel free to contact the abilitate team via email at abilitate@tech2people.at.
 
 How do I get started?
-To use abilitate, open the side navigation menu by clicking on the menu button on the top left corner. Click on “Patients”. Proceed to create a patient. 
+To use abilitate, open the side navigation menu by clicking on the menu button on the top left corner. Click on Patients. Proceed to create a patient. 
 
 What is abilitate?
 Abilitate is an application for physiotherapists that use it to track patients (medical history, patient physique, activities) and their therapy (entering therapy plans / goals, creating an ICF status, assessing patients, looking at progress reports).
 
 What is an ICF status and how do I assess it in the app?
-ICF is a classification of the health components of functioning and disability, it’s main components are body functions and structure and activities of the patient. The ICF status lets you add activites or body functions and structure to the patient, which you can assess while you do therapy.
+ICF is a classification of the health components of functioning and disability, its main components are body functions and structure and activities of the patient. The ICF status lets you add activites or body functions and structure to the patient, which you can assess while you do therapy.
 
-Can I update a patient’s ICF status?
-Yes, you should update your patient’s ICF status regularly, for instance assessing a patient’s activity every week when they have therapy. After you assessed a patient at least twice, you can see the progress report under the tab “Report”.
+Can I update a patient's ICF status?
+Yes, you should update your patient's ICF status regularly, for instance assessing a patient's activity every week when they have therapy. After you assessed a patient at least twice, you can see the progress report under the tab Report.
 
 How do I get to my patients?
 Open the side navigation menu by clicking on the menu button on the top left corner. Click on "Patients".
 
 How do I create a patient?
 Get to the patient list. Click on the purple "Create patient" button on the top right. Enter the credentials and press "Create patient".
+
+What does an ICF Status look like and what is in it?
+In the overview of the ICF Status, all added items, goals, and the results of the performed assessments are visible.
 
 How do I enter the patient's medical details (physique, diagnoses, previous measures, medications, etc.)?
 Get to the patient list. Click on a patient card. In the patient details page, choose the tab "Initial Assessment".

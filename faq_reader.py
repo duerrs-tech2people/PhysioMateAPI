@@ -49,7 +49,7 @@ def answerFaqRelatedQuestion(question):
 
     promptTemplate = """Use the following pieces of context to answer the question at the end.
     These pieces come from a FAQ page, try to only include the answer of the question you find most likely to fit. Provide the full answer.
-    If you don't know the answer, just say that you don't know, don't try to make up an answer.
+    If you don't know the answer, just say 'I do not know.', do not try to make up an answer.
 
     {context}
 
